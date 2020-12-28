@@ -14,7 +14,7 @@ class PlaceViewModel :ViewModel() {
     val placeLiveData = Transformations.switchMap(searchLiveData){query ->
         Repository.searchPlaces(query)
     }
-    fun searchPlaces(query:String){ //调用这个方法就触发上面的switchmap的转换函数
+    fun searchPlaces(query:String){ //调用这个方法就触发switchmap转换函数
         searchLiveData.value = query
     }
 

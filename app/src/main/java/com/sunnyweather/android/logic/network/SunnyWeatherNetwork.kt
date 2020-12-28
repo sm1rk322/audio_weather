@@ -8,11 +8,11 @@ import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
 
-
+//对相关接口进行封装
 object SunnyWeatherNetwork {
 
-    private val placeService = ServiceCreator.create<PlaceService>() //搜索位置 动态代理接口
-    private val weatherService = ServiceCreator.create<WeahterService>() //天气 动态代理接口
+    private val placeService = ServiceCreator.create<PlaceService>() //搜索位置
+    private val weatherService = ServiceCreator.create<WeahterService>() //天气
 
     suspend fun searchPlaces(query:String) = placeService.searchPlaces(query).await() //直接搜索位置数据
 
